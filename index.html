@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Branded PDF Generator</title>
+  <style>
+    body { font-family: Arial, sans-serif; max-width: 720px; margin: 40px auto; padding: 0 16px; }
+    label { display:block; margin: 16px 0 6px; font-weight: 600; }
+    input, textarea { width: 100%; padding: 10px; font-size: 16px; }
+    textarea { min-height: 220px; }
+    button { margin-top: 16px; padding: 12px 16px; font-size: 16px; cursor: pointer; }
+    .hint { color: #555; font-size: 14px; margin-top: 6px; }
+  </style>
+</head>
+<body>
+  <h1>Generate a branded PDF</h1>
+  <p>Paste your content, choose a primary color, and generate an A4 PDF.</p>
+
+  <form method="POST" action="https://script.google.com/macros/s/AKfycbwH6FGo5s_9m5T0VP0x7pD6inaNUBaLm84QSf33byC_J_DrU_Ivux0w3o11CmZS49OG/exec" target="_blank">
+    <label for="title">Title</label>
+    <input id="title" name="title" required placeholder="e.g. Q1 Report" />
+
+    <label for="body">Body</label>
+    <textarea id="body" name="body" required placeholder="Write your text here..."></textarea>
+    <div class="hint">Tip: use blank lines to separate paragraphs.</div>
+
+    <label for="primaryColor">Primary color</label>
+    <input id="primaryColor" name="primaryColor" placeholder="#1A2B3C" />
+
+    <button type="submit">Generate PDF</button>
+  </form>
+
+  <p class="hint">The PDF will open in a new tab.</p>
+</body>
+</html>
