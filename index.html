@@ -17,16 +17,35 @@
   <h1>Generate a branded PDF</h1>
   <p>Paste your content, choose a primary color, and generate an A4 PDF.</p>
 
-  <form method="POST" action="https://script.google.com/macros/s/AKfycbyBiV_pi3QgGCHaqfel-Od0WHSgu9088CsQIKy1RjimcCvJJihHfXqf91rwiP7S8HpSuw/exec" target="_blank">
+  <form method="POST" action="YOUR_WEB_APP_URL_HERE" target="_blank">
     <label for="title">Title</label>
     <input id="title" name="title" required placeholder="e.g. Q1 Report" />
 
     <label for="body">Body</label>
     <textarea id="body" name="body" required placeholder="Write your text here..."></textarea>
-    <div class="hint">Tip: use blank lines to separate paragraphs.</div>
 
-    <label for="primaryColor">Primary color</label>
-    <input id="primaryColor" name="primaryColor" placeholder="#1A2B3C" />
+    <!-- Nouvelle charte graphique -->
+    <label for="font">Font</label>
+    <input id="font" name="font" placeholder="Arial" />
+
+    <label for="colorTitle">Title Color</label>
+    <input id="colorTitle" name="colorTitle" placeholder="#1A2B3C" />
+
+    <label for="colorSubtitle">Subtitle Color</label>
+    <input id="colorSubtitle" name="colorSubtitle" placeholder="#2E8B57" />
+
+    <label for="colorAccent">Accent Color</label>
+    <input id="colorAccent" name="colorAccent" placeholder="#F4A261" />
+
+    <label for="colorText">Text Color</label>
+    <input id="colorText" name="colorText" placeholder="#333333" />
+
+    <label for="baseSize">Base Text Size (pt)</label>
+    <input id="baseSize" name="baseSize" type="number" value="12" />
+
+    <label for="ratio">Typographic Ratio</label>
+    <input id="ratio" name="ratio" type="number" step="0.1" value="1.5" />
+    <!-- Fin nouvelle charte -->
 
     <button type="submit">Generate PDF</button>
   </form>
