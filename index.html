@@ -15,37 +15,37 @@
 </head>
 <body>
   <h1>Generate a branded PDF</h1>
-  <p>Paste your content, choose a primary color, and generate an A4 PDF.</p>
+  <p>Fill in your content, choose font, colors, base size & ratio, then generate the PDF.</p>
 
-  <form method="POST" action="https://script.google.com/macros/s/AKfycbyBiV_pi3QgGCHaqfel-Od0WHSgu9088CsQIKy1RjimcCvJJihHfXqf91rwiP7S8HpSuw/exec" target="_blank">
+  <form method="POST" action="https://script.google.com/macros/s/AKfycbzZxkhd9XZJ4Rtdb-jBqZR4BO8LFSLQA6amt50MCNcdLMDlLMDxNTnK3tUoV_3jmBZuUg/exec" target="_blank">
+    
     <label for="title">Title</label>
-    <input id="title" name="title" required placeholder="e.g. Q1 Report" />
+    <input id="title" name="title" required placeholder="Ex: Q1 Report" />
 
     <label for="body">Body</label>
     <textarea id="body" name="body" required placeholder="Write your text here..."></textarea>
+    <div class="hint">Use blank lines to separate paragraphs.</div>
 
-    <!-- Nouvelle charte graphique -->
     <label for="font">Font</label>
-    <input id="font" name="font" placeholder="Arial" />
+    <input id="font" name="font" placeholder="Ex: Arial, Roboto" />
 
-    <label for="colorTitle">Title Color</label>
-    <input id="colorTitle" name="colorTitle" placeholder="#1A2B3C" />
+    <label for="baseSize">Base font size (pt)</label>
+    <input id="baseSize" name="baseSize" type="number" placeholder="12" />
 
-    <label for="colorSubtitle">Subtitle Color</label>
-    <input id="colorSubtitle" name="colorSubtitle" placeholder="#2E8B57" />
+    <label for="ratio">Typographic ratio</label>
+    <input id="ratio" name="ratio" type="number" step="0.1" placeholder="1.5" />
 
-    <label for="colorAccent">Accent Color</label>
-    <input id="colorAccent" name="colorAccent" placeholder="#F4A261" />
+    <label for="colorTitle">Color - Title</label>
+    <input id="colorTitle" name="colorTitle" type="color" value="#1A2B3C" />
 
-    <label for="colorText">Text Color</label>
-    <input id="colorText" name="colorText" placeholder="#333333" />
+    <label for="colorSubtitle">Color - Subtitle</label>
+    <input id="colorSubtitle" name="colorSubtitle" type="color" value="#2E8B57" />
 
-    <label for="baseSize">Base Text Size (pt)</label>
-    <input id="baseSize" name="baseSize" type="number" value="12" />
+    <label for="colorAccent">Color - Accent</label>
+    <input id="colorAccent" name="colorAccent" type="color" value="#F4A261" />
 
-    <label for="ratio">Typographic Ratio</label>
-    <input id="ratio" name="ratio" type="number" step="0.1" value="1.5" />
-    <!-- Fin nouvelle charte -->
+    <label for="colorText">Color - Body Text</label>
+    <input id="colorText" name="colorText" type="color" value="#333333" />
 
     <button type="submit">Generate PDF</button>
   </form>
