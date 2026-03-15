@@ -2,65 +2,30 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>PDF Generator</title>
-    <style>
-      body { font-family: Arial, sans-serif; padding: 24px; max-width: 600px; margin: auto; }
-      label { display: block; margin-top: 12px; font-weight: bold; }
-      input, select { width: 100%; padding: 6px; margin-top: 4px; }
-      button { margin-top: 16px; padding: 10px 20px; font-size: 16px; }
-    </style>
+    <title>Generate PDF</title>
   </head>
-  <body>
-    <h1>Generate PDF from Google Doc</h1>
-    <form method="POST" action="https://script.google.com/macros/s/AKfycbwyE9uDjueSdM6NlhxY3Jtg3YG4PKIixf0ypSg9fxV-svfEqQGzFr4KI_2Jjgs57OK1Mg/exec" target="_blank">
-  <label>Google Doc URL</label>
-  <input name="docUrl" required placeholder="https://docs.google.com/document/d/...">
+  <body style="font-family: Arial, sans-serif; padding: 24px;">
+    <h2>Generate PDF from Google Doc</h2>
+    <form method="POST" action="https://script.google.com/macros/s/AKfycby_pZa-pNsZTXiTFP2ym8EkxEHvUpObg03M2XAUjb-jiUwmhOdaZsopHcDws3fn_Xh_uw/exec" target="_blank">
+      <label>Google Doc URL</label><br>
+      <input name="docUrl" required placeholder="https://docs.google.com/document/d/..."><br><br>
 
-  <label>Font</label>
-  <input name="font" placeholder="Arial">
+      <label>Font</label><br>
+      <input name="font" placeholder="Arial"><br><br>
 
-  <label>Base Size</label>
-  <input name="baseSize" type="number" placeholder="12">
+      <label>Base Size</label><br>
+      <input name="baseSize" type="number" placeholder="12"><br><br>
 
-  <label>Ratio</label>
-  <input name="ratio" type="number" step="0.1" placeholder="1.5">
+      <label>Ratio (Title Size)</label><br>
+      <input name="ratio" type="number" step="0.1" placeholder="1.5"><br><br>
 
-  <label>Title Color</label>
-  <input name="colorTitle" placeholder="#1A2B3C">
+      <label>Title Color</label><br>
+      <input name="colorTitle" placeholder="#1A2B3C"><br><br>
 
-  <label>Text Color</label>
-  <input name="colorText" placeholder="#333333">
+      <label>Text Color</label><br>
+      <input name="colorText" placeholder="#333333"><br><br>
 
-  <button type="submit">Generate PDF</button>
-</form>
-
-    <div id="result" style="margin-top:20px;"></div>
-
-    <script>
-      const form = document.getElementById('pdfForm');
-      const result = document.getElementById('result');
-
-      form.addEventListener('submit', async (e) => {
-        e.preventDefault();
-
-        result.innerHTML = "Generating PDF… ⏳";
-
-        const formData = new FormData(form);
-        const params = new URLSearchParams(formData).toString();
-        
-        try {
-          const response = await fetch("https://script.google.com/macros/s/AKfycbwyE9uDjueSdM6NlhxY3Jtg3YG4PKIixf0ypSg9fxV-svfEqQGzFr4KI_2Jjgs57OK1Mg/exec",
-            method: "POST",
-            body: params,
-            headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
-          });
-
-          const text = await response.text();
-          result.innerHTML = text;
-        } catch (err) {
-          result.innerHTML = "Error: " + err.message;
-        }
-      });
-    </script>
+      <button type="submit">Generate PDF</button>
+    </form>
   </body>
 </html>
