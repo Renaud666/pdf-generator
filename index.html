@@ -12,32 +12,27 @@
   </head>
   <body>
     <h1>Generate PDF from Google Doc</h1>
-    <form id="pdfForm">
-      <label for="docUrl">Google Doc URL</label>
-      <input type="url" id="docUrl" name="docUrl" required placeholder="https://docs.google.com/...">
+    <form method="POST" action="https://script.google.com/macros/s/AKfycbwyE9uDjueSdM6NlhxY3Jtg3YG4PKIixf0ypSg9fxV-svfEqQGzFr4KI_2Jjgs57OK1Mg/exec" target="_blank">
+  <label>Google Doc URL</label>
+  <input name="docUrl" required placeholder="https://docs.google.com/document/d/...">
 
-      <label for="font">Font</label>
-      <select id="font" name="font">
-        <option value="Arial">Arial</option>
-        <option value="Times New Roman">Times New Roman</option>
-        <option value="Calibri">Calibri</option>
-        <option value="Verdana">Verdana</option>
-      </select>
+  <label>Font</label>
+  <input name="font" placeholder="Arial">
 
-      <label for="baseSize">Base font size (px)</label>
-      <input type="number" id="baseSize" name="baseSize" value="12" min="6" max="72">
+  <label>Base Size</label>
+  <input name="baseSize" type="number" placeholder="12">
 
-      <label for="ratio">Title size ratio</label>
-      <input type="number" step="0.1" id="ratio" name="ratio" value="1.5">
+  <label>Ratio</label>
+  <input name="ratio" type="number" step="0.1" placeholder="1.5">
 
-      <label for="colorTitle">Title color</label>
-      <input type="color" id="colorTitle" name="colorTitle" value="#1A2B3C">
+  <label>Title Color</label>
+  <input name="colorTitle" placeholder="#1A2B3C">
 
-      <label for="colorText">Body color</label>
-      <input type="color" id="colorText" name="colorText" value="#333333">
+  <label>Text Color</label>
+  <input name="colorText" placeholder="#333333">
 
-      <button type="submit">Generate PDF</button>
-    </form>
+  <button type="submit">Generate PDF</button>
+</form>
 
     <div id="result" style="margin-top:20px;"></div>
 
