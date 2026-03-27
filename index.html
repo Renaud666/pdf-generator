@@ -8,7 +8,7 @@
 
 <h1>Generate your PDF</h1>
 
-<form method="POST" action="https://script.google.com/macros/s/AKfycbzQw25vxrs-AtvTYr9pxy4YKyXQvarMdczO-CYFmk0MTIYdlf-nFa_SvBTaTUglgPZ4lA/exec" target="_blank">
+<form method="POST" action="https://script.google.com/macros/s/AKfycbwg1OMdklu5623a9Y9lwMt8AnRk-WzdIzuA7b-LS5GQ5y9LnxtE05RWqcfOyPVAu47r2g/exec" target="_blank">
 
   <label>Google Doc URL</label><br>
   <input type="text" name="docUrl" required style="width:400px;"><br><br>
@@ -22,11 +22,22 @@
   <label>Ratio</label><br>
   <input type="number" step="0.1" name="ratio" value="1.5"><br><br>
 
-  <label>Title color</label><br>
-  <input type="text" name="colorTitle" value="#1A2B3C"><br><br>
+  <h3>Colors</h3>
+  <label>Primary</label><br>
+  <input type="text" name="colorPrimary" value="#1A2B3C"><br><br>
 
-  <label>Text color</label><br>
+  <label>Background</label><br>
+  <input type="text" name="colorBackground" value="#FFFFFF"><br><br>
+
+  <label>Text</label><br>
   <input type="text" name="colorText" value="#333333"><br><br>
+
+  <label>Accent</label><br>
+  <input type="text" name="colorAccent" value="#F4A261"><br><br>
+
+  <h3>Layout</h3>
+  <label>Margin</label><br>
+  <input type="number" name="margin" value="40"><br><br>
 
   <label>Spacing paragraph</label><br>
   <input type="number" name="spacingParagraph" value="8"><br><br>
@@ -35,7 +46,6 @@
   <input type="number" name="spacingSection" value="20"><br><br>
 
   <button type="submit">Generate PDF</button>
-
 </form>
 
 </body>
